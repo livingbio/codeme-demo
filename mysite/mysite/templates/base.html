@@ -119,13 +119,16 @@
                         <button id="score" class="filter" data-filter=".score">Category 2</button> 
                         <button id="edu" class="filter" data-filter=".edu">Category 2</button> 
                         
-                        <button id="asc" class="sort" data-sort="work:asc">Asc</button>
-                        <button id="desc" class="sort" data-sort="work:desc">Desc</button>
+                        
+                        <button id="random" class="sort" data-sort="random">Asc</button>
+                        <button id="default" class="sort" data-sort="default">default</button>
+                        <button id="asc" class="sort" data-sort="order:asc">Asc</button>
+                        <button id="desc" class="sort" data-sort="order:desc">Desc</button>
                     </div>
  
                     <div class="row">
                         <!-- start resume1 -->
-                        <div class="mix score col-sm-4">
+                        <div class="mix score col-sm-4" data-order="5">
                             <div class="Filtered-resume-item">
                                 <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-1_400x400.png'%}" alt=""></a>
                                 <p class="Filtered-resume-item-name">Liang Huang</p>
@@ -173,7 +176,7 @@
                     </div> 
                     <!-- end resume1 -->
                     <!-- start resume2 -->
-                    <div class="mix team col-sm-4">
+                    <div class="mix team col-sm-4" data-order="1">
                          <div class="Filtered-resume-item">
                                 <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-1_400x400.png'%}" alt=""></a>
                                 <p class="Filtered-resume-item-name">Liang Huang</p>
@@ -220,7 +223,7 @@
                         </div>
                     </div>
                     <!-- start resume3-->
-                    <div class="mix coding col-sm-4">
+                    <div class="mix coding col-sm-4" data-order="3">
                          <div class="Filtered-resume-item">
                                 <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-1_400x400.png'%}" alt=""></a>
                                 <p class="Filtered-resume-item-name">Liang Huang</p>
@@ -269,7 +272,7 @@
                     </div>
                     <!--<div class="row">-->
                         <!-- start resume4 -->
-                        <div class="mix team col-sm-4">
+                        <div class="mix team col-sm-4" data-order="7">
                             <div class="mix community Filtered-resume-item">
                                 <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-1_400x400.png'%}" alt=""></a>
                                 <p class="Filtered-resume-item-name">Liang Huang</p>
@@ -316,7 +319,7 @@
                         </div>
                     </div> 
                     <!-- end resume5 -->
-                    <div class="team coding work col-sm-4">
+                    <div class="team coding work col-sm-4" data-order="2">
                          <div class="mix score testing Filtered-resume-item">
                                 <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-1_400x400.png'%}" alt=""></a>
                                 <p class="Filtered-resume-item-name">Liang Huang</p>
@@ -363,7 +366,7 @@
                         </div>
 
                     </div>
-                    <div class="mix team score col-sm-4">
+                    <div class="mix team score col-sm-4" data-order="6">
                          <div class="Filtered-resume-item">
                                 <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-1_400x400.png'%}" alt=""></a>
                                 <p class="Filtered-resume-item-name">Liang Huang</p>

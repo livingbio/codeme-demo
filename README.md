@@ -15,6 +15,8 @@
 
 * filter animation user "mixitup js".
 
+* The Yes/No question I tried to use sorting in Mixitup.js. Call $("#asc").click() for yes and $("#desc").click() for no.
+
 * To make filter work, add class "mix xxxx" to the resume <div class="col-sm-4">.
 
 * For example, this guy is good at testing. His div class should be "mix testing col-sm-4".
@@ -41,5 +43,4 @@
 * If you wish to change it, it is in javascript function sliderOnChange (1~10).
 
 * I used Kendo UI to draw radar chart. The default value is each ability is set in javascript function createChart()->  series -> average.
-
 
