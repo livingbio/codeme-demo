@@ -4,12 +4,13 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     {% compress css %}
         <link rel="stylesheet" type="text/x-scss" href="{% static 'css/all.scss' %}">
@@ -29,13 +30,14 @@
     <![endif]-->
 </head>
 <body>
-    {% block body%}
-        <div class="container-fluid">
-            <nav class="navbar navbar-default navbar-fixed-top">
-           <a class="navbar-brand " href="/zh-hant/">
-               <img width="156" src="{% static 'img/codeme_logo--green.png'%}" alt="" data-pin-nopin="true">
+{% block body %}
+    <div class="container-fluid">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <a class="navbar-brand " href="/zh-hant/">
+                <img width="156" src="{% static 'img/codeme_logo--green.png' %}" alt="" data-pin-nopin="true">
             </a>
         </nav>
+<<<<<<< HEAD
             <div class="row">
                 <section class="col-sm-3 Status-analytics">
                     <div class="Status-analytics-chart">
@@ -92,7 +94,16 @@
                             </ul>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
+
+            <section class="col-sm-9 Filtered-resume">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="Filtered-resume-item">
+                            <a href="#"><img class="Filtered-resume-item-avatar"
+                                             src="{% static 'img/avatar-1_400x400.png' %}" alt=""></a>
+                            <p class="Filtered-resume-item-name">Liang Huang</p>
 
                 <section class="col-sm-9 Filtered-resume">
                    
@@ -125,16 +136,49 @@
                                         <label><input type="checkbox">Yes</label>
                                         <label><input type="checkbox">No</label>
                                     </span>
+
+                            </div>
+                            <div class="Filtered-resume-item-statics-charts">
+                                <div class="ProgressBar-1">
+                                    <label class="pull-left ProgressBar-label">Working Exp.</label>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                             aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            40%
+                                        </div>
+                                    </div>
                                 </div>
+
+                                <div class="ProgressBar-2">
+                                    <label class="pull-left ProgressBar-label">Education</label>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
+                                             aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                           20%
+                                        </div>
+                                 </div>
+                                </div>
+
+                                <div class="ProgressBar-3">
+                                    <label class="pull-left ProgressBar-label">Test Score</label>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                                             aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            60%
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-4"></div>
-
                     </div>
-                </section>
-            </div>
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4"></div>
+
+                </div>
+            </section>
         </div>
+    </div>
 
     {% endblock %}
     
@@ -403,5 +447,6 @@
                 });
             </script>
 
+{% endblock %}
 </body>
 
