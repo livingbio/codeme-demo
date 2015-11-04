@@ -15,6 +15,13 @@
         <link rel="stylesheet" type="text/x-scss" href="{% static 'css/all.scss' %}">
     {% endcompress %}
 
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2014.1.318/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2014.1.318/styles/kendo.default.min.css" />
+    <script src="http://kendo.cdn.telerik.com/2014.1.318/js/jquery.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2014.1.318/js/kendo.all.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script> 
+
     {% block extra_css %}{% endblock %}
     <!--[if lt IE 9]>
     <script src="{% static 'js/html5shiv.min.js' %}"></script>
@@ -34,18 +41,79 @@
                     <div class="Status-analytics-chart">
                         <header class="Status-analytics-chart-heading">Status Analytics</header>
                         <div class="Status-analytics-chart-radar">
-                            put radar here
+                            <div id="chart"></div>
                         </div>
                     </div>
                     <div class="Status-analytics-filters">
                          <header class="Status-analytics-filter-heading">Filters</header>
                          <div class="Status-analytics-filter-filters">
-                            put filters here
+                            <ul id="fieldlist">
+                                <li>
+                                    <label>Team Work</label>
+                                    <input id="slider1" class="balSlider" />
+                                </li>
+                                <li>
+                                    <label>Coding</label>
+                                    <input id="slider2" class="balSlider" />
+                                </li>
+                                <li>
+                                    <label>Testing</label>
+                                    <input id="slider3" class="balSlider" />
+                                </li>
+                                <li>
+                                    <label>Academic</label>
+                                    <input id="slider4" class="balSlider" />
+                                </li>
+                                <li>
+                                    <label>Innovation</label>
+                                    <input id="slider5" class="balSlider" />
+                                </li>
+                                <li>
+                                    <label>Community</label>
+                                    <input id="slider6" class="balSlider" />
+                                </li>
+                                <li>
+                                    <label>Project Management</label>
+                                    <input id="slider7" class="balSlider" />
+                                </li>
+                                <li>
+                                    <label>Working Experience</label>
+                                    <input id="slider8" class="balSlider" />
+                                </li> 
+                                <li>
+                                    <label>Education</label>
+                                    <input id="slider10" class="balSlider" />
+                                </li> 
+                                <li>
+                                    <label>Test Score</label>
+                                    <input id="slider9" class="balSlider" />
+                                </li> 
+
+                            </ul>
                         </div>
                     </div>
                 </section>
 
                 <section class="col-sm-9 Filtered-resume">
+                   
+                    <div style="display: hidden; height: 0px;">
+                        <button id="all" class="filter" data-filter="all">All</button>
+                        <button id="community" class="filter" data-filter=".community">Category 1</button>
+                        <button id="testing" class="filter" data-filter=".testing">Category 2</button> 
+                        <button id="team" class="filter" data-filter=".team">Category 2</button>
+                        <button id="coding" class="filter" data-filter=".coding">Category 2</button>
+                        <button id="acedemic" class="filter" data-filter=".acedemic">Category 2</button>
+                        <button id="pm" class="filter" data-filter=".pm">Category 2</button> 
+                        <button id="innovation" class="filter" data-filter=".innovation">Category 2</button> 
+                        
+                        <button id="work" class="filter" data-filter=".work">Category 2</button> 
+                        <button id="score" class="filter" data-filter=".score">Category 2</button> 
+                        <button id="edu" class="filter" data-filter=".edu">Category 2</button> 
+                        
+                        <button id="asc" class="sort" data-sort="work:asc">Asc</button>
+                        <button id="desc" class="sort" data-sort="work:desc">Desc</button>
+                    </div>
+ 
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="Filtered-resume-item">
@@ -69,5 +137,271 @@
         </div>
 
     {% endblock %}
+    
+
+     <script>
+                function createChart() {
+                      $("#chart").kendoChart({
+                          title: {
+                          },
+                          legend: {
+                              position: "bottom"
+                          },
+                          seriesDefaults: {
+                              type: "radarArea"
+                          },
+                          series: [{
+                              name: "Searching Criteria",
+                              data: [5, 5, 5, 5, 5, 5, 5]
+                          }, {
+                              name: "Average",
+                              data: [6, 6, 4, 7, 5, 4, 7]
+                          }],
+                          categoryAxis: {
+                              categories: [
+                                  "Team work", "Coding", "Testing", "Academic", "Innovation", "Community", "Project Management",
+                              ],
+                              majorGridLines: {
+                                  visible: false
+                              }
+                          },
+                          valueAxis: {
+                              labels: {
+                                  //format: ""
+                              },
+                              line: {
+                                  visible: false
+                              }
+                          }
+                      });
+                  }
+                
+                $(document).ready(createChart);
+                $(document).bind("kendo:skinChange", createChart);
+                function sliderOnChange1(e) {
+                    console.log("Change :: new value is: " + e.value);
+                    var chart = $("#chart").data("kendoChart");
+                    chart.options.series[0].data[0] = e.value;
+                    chart.redraw();
+                    if (e.value>7){
+                      $("#team").click();
+                    } else if (e.value <3){
+                      $("#all").click();
+                    }
+                }
+                function sliderOnChange2(e) {
+                    console.log("Change :: new value is: " + e.value);
+                    var chart = $("#chart").data("kendoChart");
+                    chart.options.series[0].data[1] = e.value;
+                    chart.redraw();
+                    if (e.value>7){
+                      $("#coding").click();
+                    } else if (e.value <3){
+                      $("#all").click();
+                    }
+
+                }
+                function sliderOnChange3(e) {
+                    console.log("Change :: new value is: " + e.value);
+                    var chart = $("#chart").data("kendoChart");
+                    chart.options.series[0].data[2] = e.value;
+                    chart.redraw();
+                    if (e.value>7){
+                      $("#acedemic").click();
+                    } else if (e.value <3){
+                      $("#all").click();
+                    }
+
+                }
+                function sliderOnChange4(e) {
+                    console.log("Change :: new value is: " + e.value);
+                    var chart = $("#chart").data("kendoChart");
+                    chart.options.series[0].data[3] = e.value;
+                    chart.redraw();
+                    if (e.value>7){
+                      $("#testing").click();
+                    } else if (e.value <3){
+                      $("#all").click();
+                    }
+
+                }
+                function sliderOnChange5(e) {
+                    console.log("Change :: new value is: " + e.value);
+                    var chart = $("#chart").data("kendoChart");
+                    chart.options.series[0].data[4] = e.value;
+                    chart.redraw();
+                    if (e.value>7){
+                      $("#innovation").click();
+                    } else if (e.value <3){
+                      $("#all").click();
+                    }
+
+                }
+                function sliderOnChange6(e) {
+                    console.log("Change :: new value is: " + e.value);
+                    var chart = $("#chart").data("kendoChart");
+                    chart.options.series[0].data[5] = e.value;
+                    chart.redraw();
+                    if (e.value>7){
+                      $("#community").click();
+                    } else if (e.value <3){
+                      $("#all").click();
+                    }
+
+                }
+                function sliderOnChange7(e) {
+                    console.log("Change :: new value is: " + e.value);
+                    var chart = $("#chart").data("kendoChart");
+                    chart.options.series[0].data[6] = e.value;
+                    chart.redraw();
+                    if (e.value>7){
+                      $("#pm").click();
+                    } else if (e.value <3){
+                      $("#all").click();
+                    }
+
+                }
+
+                function sliderOnChange8(e) {
+                    console.log("Change :: new value is: " + e.value);
+                    if (e.value>7){
+                      $("#work").click();
+                    } else if (e.value <3){
+                      $("#all").click();
+                    }
+                }
+                function sliderOnChange9(e) {
+                    console.log("Change :: new value is: " + e.value);
+                    if (e.value>7){
+                      $("#edu").click();
+                    } else if (e.value <3){
+                      $("#all").click();
+                    }
+                }
+
+                function sliderOnChange10(e) {
+                    console.log("Change :: new value is: " + e.value);
+                    if (e.value>7){
+                      $("#score").click();
+                    } else if (e.value <3){
+                      $("#all").click();
+                    }
+                }
+
+
+                function sliderOnSlide(e) {
+                    console.log("Slide :: new slide value is: " + e.value);
+                }
+                
+
+                $(document).ready(function() {
+                    $('#Container').mixItUp();
+
+                    $("#slider1").kendoSlider({
+                        change: sliderOnChange1,
+                        slide: sliderOnSlide,
+                        min: 0,
+                        max: 10,
+                        smallStep: 1,
+                        largeStep: 10,
+                        value: 5,
+                        showButtons: false
+                    });
+                    $("#slider2").kendoSlider({
+                        change: sliderOnChange2,
+                        slide: sliderOnSlide,
+                        min: 0,
+                        max: 10,
+                        smallStep: 1,
+                        largeStep: 10,
+                        value: 5,
+                        showButtons: false
+                    });
+                    $("#slider3").kendoSlider({
+                        change: sliderOnChange3,
+                        slide: sliderOnSlide,
+                        min: 0,
+                        max: 10,
+                        smallStep: 1,
+                        largeStep: 10,
+                        value: 5,
+                        showButtons: false
+                    });
+                    $("#slider4").kendoSlider({
+                        change: sliderOnChange4,
+                        slide: sliderOnSlide,
+                        min: 0,
+                        max: 10,
+                        smallStep: 1,
+                        largeStep: 10,
+                        value: 5,
+                        showButtons: false
+                    });
+                    $("#slider5").kendoSlider({
+                        change: sliderOnChange5,
+                        slide: sliderOnSlide,
+                        min: 0,
+                        max: 10,
+                        smallStep: 1,
+                        largeStep: 10,
+                        value: 5,
+                        showButtons: false
+                    });
+                    $("#slider6").kendoSlider({
+                        change: sliderOnChange6,
+                        slide: sliderOnSlide,
+                        min: 0,
+                        max: 10,
+                        smallStep: 1,
+                        largeStep: 10,
+                        value: 5,
+                        showButtons: false
+                    });
+                    $("#slider7").kendoSlider({
+                        change: sliderOnChange7,
+                        slide: sliderOnSlide,
+                        min: 0,
+                        max: 10,
+                        smallStep: 1,
+                        largeStep: 10,
+                        value: 5,
+                        showButtons: false
+                    });
+                    $("#slider8").kendoSlider({
+                        change: sliderOnChange8,
+                        slide: sliderOnSlide,
+                        min: 0,
+                        max: 10,
+                        smallStep: 1,
+                        largeStep: 10,
+                        value: 5,
+                        showButtons: false
+                    });
+                    $("#slider9").kendoSlider({
+                        change: sliderOnChange9,
+                        slide: sliderOnSlide,
+                        min: 0,
+                        max: 10,
+                        smallStep: 1,
+                        largeStep: 10,
+                        value: 5,
+                        showButtons: false
+                    });
+
+                    $("#slider10").kendoSlider({
+                        change: sliderOnChange10,
+                        slide: sliderOnSlide,
+                        min: 0,
+                        max: 10,
+                        smallStep: 1,
+                        largeStep: 10,
+                        value: 5,
+                        showButtons: false
+                    });
+
+
+                });
+            </script>
+
 </body>
 
