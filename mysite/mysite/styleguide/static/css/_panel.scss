@@ -45,6 +45,47 @@
 .Filtered-resume {
   background-color: #F4F4F4;
   height: 999999px;
-  padding-left: 0;
+  padding-left: 30px;
   padding-right: 0;
+  padding-top: 75px;
+
+}
+
+.Filtered-resume-item {
+  background-color: #fff;
+  height: 363px;
+  text-align: center;
+}
+
+.Filtered-resume-item-avatar {
+  border-radius: 50%;
+  border: 5px solid #E6E6E6;
+  margin-top: 16px;
+}
+
+.Filtered-resume-item-name {
+  margin-top: 8px;
+  color: #4D4D4D;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.Filtered-resume-item-question {
+  border-left: 3px solid #4CBA7F;
+  padding-left: 5px;
+  color: #333;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  height: 20px;
+  input[type="checkbox"] {
+    margin-right: 3px;
+  }
+  > .pull-right {
+    margin-left: 15px;
+  }
+  label {
+    font-weight: lighter;
+    color: #9FB1C0;
+  }
 }
