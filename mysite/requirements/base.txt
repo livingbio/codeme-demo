@@ -1,0 +1,10 @@
+Django>=1.8
+Unipath==1.0
+wsgiref==0.1.2
+django-braces==1.4.0
+logutils>=0.3.3
+django-compressor==1.4
+django-libsass==0.2
+sqlparse==0.1.14
+django-kss-styleguide
+django-bootstrap3-sass
