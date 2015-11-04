@@ -23,7 +23,36 @@
 </head>
 <body>
     {% block body%}
-    <button class='btn btn-info'> It Works</button>
+        <div class="container-fluid">
+            <nav class="navbar navbar-default navbar-fixed-top">
+           <a class="navbar-brand " href="/zh-hant/">
+               <img width="156" src="{% static 'img/codeme_logo--green.png'%}" alt="" data-pin-nopin="true">
+            </a>
+        </nav>
+            <div class="row">
+                <section class="col-sm-3 Status-analytics">
+                    <div class="Status-analytics-chart">
+                        <header class="Status-analytics-chart-heading">Status Analytics</header>
+                        <div class="Status-analytics-chart-radar">
+                            put radar here
+                        </div>
+                    </div>
+                    <div class="Status-analytics-filters">
+                         <header class="Status-analytics-filter-heading">Filters</header>
+                         <div class="Status-analytics-filter-filters">
+                            put filters here
+                        </div>
+                    </div>
+                </section>
+
+                <section class="col-sm-9 Filtered-resume">
+                    <div class="">
+
+                    </div>
+                </section>
+            </div>
+        </div>
+
     {% endblock %}
 </body>
 
