@@ -34,7 +34,7 @@
                 <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-1_400x400.png' %}" alt=""></a>
                 <p class="Filtered-resume-item-name">Liang Huang</p>
                 <div class="Filtered-resume-item-question">
-                    <span class="pull-left">Fulfill your demand</span>
+                    <span class="pull-left">Fulfill your demand ?</span>
                     <span class="pull-right">
                         <label><input type="checkbox">Yes</label>
                         <label><input type="checkbox">No</label>
@@ -45,7 +45,7 @@
                     <div class="ProgressBar-1">
                         <label class="pull-left ProgressBar-label">Working Exp.</label>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                            <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                 40%
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                     <div class="ProgressBar-2">
                         <label class="pull-left ProgressBar-label">Education</label>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                            <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                                 20%
                             </div>
                         </div>
@@ -61,11 +61,14 @@
                     <div class="ProgressBar-3">
                         <label class="pull-left ProgressBar-label">Test Score</label>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                            <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                 70%
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="Filtered-resume-item-description Filtered-bounceIn">
+                    teamwork
                 </div>
             </div>
         </div>
@@ -91,47 +94,66 @@
                  <header class="Status-analytics-filter-heading">Filters</header>
                  <div class="Status-analytics-filter-filters">
                     <ul id="fieldlist">
-                        <li>
-                            <label>Team Work</label>
-                            <input id="slider1" class="balSlider" />
+                        <li class="balSlider-group clearfix">
+                            <label class="balSlider-label col-sm-3">Team Work</label>
+                            <div class="col-sm-9">
+                                <input id="slider1" class="balSlider" />
+                            </div>
                         </li>
-                        <li>
-                            <label>Coding</label>
-                            <input id="slider2" class="balSlider" />
+                        <li class="balSlider-group clearfix">
+                            <label class="balSlider-label col-sm-3">Coding</label>
+                            <div class="col-sm-9">
+                                <input id="slider2" class="balSlider" />
+                            </div>
                         </li>
-                        <li>
-                            <label>Testing</label>
-                            <input id="slider3" class="balSlider" />
+                        <li class="balSlider-group clearfix">
+                            <label class="balSlider-label col-sm-3">Testing</label>
+                            <div class="col-sm-9">
+                                <input id="slider3" class="balSlider" />
+                            </div>
                         </li>
-                        <li>
-                            <label>Academic</label>
-                            <input id="slider4" class="balSlider" />
+                        <li class="balSlider-group clearfix">
+                            <label class="balSlider-label col-sm-3">Academic</label>
+                            <div class="col-sm-9">
+                                <input id="slider4" class="balSlider" />
+                            </div>
                         </li>
-                        <li>
-                            <label>Innovation</label>
-                            <input id="slider5" class="balSlider" />
+                        <li class="balSlider-group clearfix">
+                            <label class="balSlider-label col-sm-3">Innovation</label>
+                            <div class="col-sm-9">
+                                <input id="slider5" class="balSlider" />
+                            </div>
                         </li>
-                        <li>
-                            <label>Community</label>
-                            <input id="slider6" class="balSlider" />
+                        <li class="balSlider-group clearfix">
+                            <label class="balSlider-label col-sm-3">Community</label>
+                            <div class="col-sm-9">
+                                <input id="slider6" class="balSlider" />
+                            </div>
                         </li>
-                        <li>
-                            <label>Project Management</label>
-                            <input id="slider7" class="balSlider" />
+                        <li class="balSlider-group clearfix">
+                            <label class="balSlider-label col-sm-3">Project Management</label>
+                            <div class="col-sm-9">
+                                <input id="slider7" class="balSlider" />
+                            </div>
                         </li>
-                        <li>
-                            <label>Working Experience</label>
-                            <input id="slider8" class="balSlider" />
+                        <li class="balSlider-group clearfix">
+                            <label class="balSlider-label col-sm-3">Working Experience</label>
+                            <div class="col-sm-9">
+                                <input id="slider8" class="balSlider" />
+                            </div>
                         </li>
-                        <li>
-                            <label>Education</label>
-                            <input id="slider10" class="balSlider" />
+                        <li class="balSlider-group clearfix">
+                            <label class="balSlider-label col-sm-3">Education</label>
+                            <div class="col-sm-9">
+                                <input id="slider9" class="balSlider" />
+                            </div>
                         </li>
-                        <li>
-                            <label>Test Score</label>
-                            <input id="slider9" class="balSlider" />
+                        <li class="balSlider-group clearfix">
+                            <label class="balSlider-label col-sm-3">Test Score</label>
+                            <div class="col-sm-9">
+                                <input id="slider10" class="balSlider" />
+                            </div>
                         </li>
-
                     </ul>
                 </div>
             </div>
