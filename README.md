@@ -1,68 +1,46 @@
-# Django Template for Dorm7
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dorm7/django-project-template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# README
 
-This is a django template for dorm7
+## prepare
 
-## INSTALLATION & SETTINGS
-
-### Install Django
-
-To install django, justtype the following command
-
-    sudo pip install django
-    
-### Create Django project from the template
-
-To create the project, run the following command and please replace your\_project_name to what you like :
-
-    django-admin.py startproject --template=https://github.com/dorm7/django-project-template/archive/master.zip --extension=py,rst,html your_project_name
-
-
-### Setting Virtualenv
-
-At first, you should make sure you have [virtualenv](http://www.virtualenv.org/) installed. 
-
-after that, just cd to your\_project_name:
-
-   cd your\_project_name
-
-Then create your virtualenv:
-
-    virtualenv venv
-    
-Second, you need to enable the virtualenv by
-
-	source venv/bin/activate
-	
-
-
-
-### Install requirements
-
-For development:
-
-    pip install -r requirements/local.txt
-
-For production:
-
-    pip install -r requirements.txt
-
-For heroku:
-
-Use requirements-heroku.txt to replace requirements.txt
-
-
-### Start To Run
-
-to start project.  cd your\_project_name again (find manage.py )
-
-```bash
-python manage.py migrate   # you just do it once
-
-python manage.py runserver
 ```
+>>> virtualenv venv
+>>> source venv/bin/activate
+>>> pip install -r requirements/local.txt
+```	
 
-feel free to visit [http://127.0.0.1:8000/style_guide/](http://127.0.0.1:8000/style_guide/) and edit _varialbe.scss, you will see the amazing starting style guide for the project
+## Usage
 
-	
+* Please change the name and thumbnail of each resume, and also his ability (20%...etc)
+
+* filter animation user "mixitup js".
+
+* The Yes/No question I tried to use sorting in Mixitup.js. Call $("#asc").click() for yes and $("#desc").click() for no.
+
+* To make filter work, add class "mix xxxx" to the resume <div class="col-sm-4">.
+
+* For example, this guy is good at testing. His div class should be "mix testing col-sm-4".
+
+* The mapping of ability filter and class is as above:
+
+
+| filter | class |
+| ------ | ----- |
+| All | all |
+| community | community |
+| team work | team |
+| testing | testing |
+| academic | acedemic |
+| coding | coding |
+| project management | pm |
+| innovation | innovation |
+| test scores | score |
+| education | edu |
+
+
+* The logic of filter is, when slider is bigger than 7, it will remain only the ones who has each ability. For example, when you slide work experience to 8, it will show only the people whose class has "work" in it. When you slide to less than 2, it will show all people.
+
+* If you wish to change it, it is in javascript function sliderOnChange (1~10).
+
+* I used Kendo UI to draw radar chart. The default value is each ability is set in javascript function createChart()->  series -> average.
+
