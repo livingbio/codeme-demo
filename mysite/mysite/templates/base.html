@@ -21,7 +21,7 @@
     <script src="http://kendo.cdn.telerik.com/2014.1.318/js/jquery.min.js"></script>
     <script src="http://kendo.cdn.telerik.com/2014.1.318/js/kendo.all.min.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script> 
+    <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
 
     {% block extra_css %}{% endblock %}
     <!--[if lt IE 9]>
@@ -49,48 +49,69 @@
                          <header class="Status-analytics-filter-heading">Filters</header>
                          <div class="Status-analytics-filter-filters">
                             <ul id="fieldlist">
-                                <li>
-                                    <label>Team Work</label>
-                                    <input id="slider1" class="balSlider" />
+                                <li class="balSlider-group clearfix">
+                                    <label class="balSlider-label col-sm-3">Team Work</label>
+                                    <div class="col-sm-9">
+                                        <input id="slider1" class="balSlider" />
+                                    </div>
                                 </li>
-                                <li>
-                                    <label>Coding</label>
-                                    <input id="slider2" class="balSlider" />
+                                <li class="balSlider-group clearfix">
+                                    <label class="balSlider-label col-sm-3">Coding</label>
+                                    <div class="col-sm-9">
+                                        <input id="slider2" class="balSlider" />
+                                    </div>
                                 </li>
-                                <li>
-                                    <label>Testing</label>
-                                    <input id="slider3" class="balSlider" />
+                                <li class="balSlider-group clearfix">
+                                    <label class="balSlider-label col-sm-3">Testing</label>
+                                    <div class="col-sm-9">
+                                         <input id="slider3" class="balSlider" />
+                                    </div>
                                 </li>
-                                <li>
-                                    <label>Academic</label>
-                                    <input id="slider4" class="balSlider" />
+                                <li class="balSlider-group clearfix">
+                                    <label class="balSlider-label col-sm-3">Academic</label>
+                                    <div class="col-sm-9">
+                                        <input id="slider4" class="balSlider" />
+                                    </div>
                                 </li>
-                                <li>
-                                    <label>Innovation</label>
-                                    <input id="slider5" class="balSlider" />
+                                <li class="balSlider-group clearfix">
+                                    <label class="balSlider-label col-sm-3">Innovation</label>
+                                    <div class="col-sm-9">
+                                         <input id="slider5" class="balSlider" />
+                                    </div>
                                 </li>
-                                <li>
-                                    <label>Community</label>
-                                    <input id="slider6" class="balSlider" />
+                                <li class="balSlider-group clearfix">
+                                    <label class="balSlider-label col-sm-3">Community</label>
+                                    <div class="col-sm-9">
+                                         <input id="slider6" class="balSlider" />
+                                    </div>
                                 </li>
-                                <li>
-                                    <label>Project Management</label>
-                                    <input id="slider7" class="balSlider" />
+                                <li class="balSlider-group clearfix">
+                                    <label class="balSlider-label col-sm-3">Project Management</label>
+                                    <div class="col-sm-9">
+                                        <input id="slider7" class="balSlider" />
+                                    </div>
                                 </li>
-                                <li>
-                                    <label>Working Experience</label>
-                                    <input id="slider8" class="balSlider" />
-                                </li> 
-                                <li>
-                                    <label>Education</label>
-                                    <input id="slider10" class="balSlider" />
-                                </li> 
-                                <li>
-                                    <label>Test Score</label>
-                                    <input id="slider9" class="balSlider" />
-                                </li> 
-
+                                <hr class="Filters-divider">
+                                <li class="balSlider-group clearfix">
+                                    <label class="balSlider-label col-sm-3">Working Experience</label>
+                                    <div class="col-sm-9">
+                                        <input id="slider8" class="balSlider" />
+                                    </div>
+                                </li>
+                                <li class="balSlider-group clearfix">
+                                    <label class="balSlider-label col-sm-3">Education</label>
+                                    <div class="col-sm-9">
+                                        <input id="slider10" class="balSlider" />
+                                    </div>
+                                </li>
+                                <li class="balSlider-group clearfix">
+                                    <label class="balSlider-label col-sm-3">Test Score</label>
+                                    <div class="col-sm-9">
+                                        <input id="slider9" class="balSlider" />
+                                    </div>
+                                </li>
                             </ul>
+
                         </div>
                     </div>
             </section>
@@ -100,99 +121,99 @@
                     <div class="col-sm-4">
                         <div class="Filtered-resume-item">
                             <a href="#"><img class="Filtered-resume-item-avatar"
-                                             src="{% static 'img/avatar-1_400x400.png' %}" alt=""></a>
+                                             src="{% static 'img/avatar-1.png' %}" alt=""></a>
                             <p class="Filtered-resume-item-name">Liang Huang</p>
 -->
                 <section id="Container" class="container col-sm-9 Filtered-resume">
-                   
+
                     <div style="visibility: hidden; height: 0px; ">
                         <button id="all" class="filter" data-filter="all">All</button>
                         <button id="community" class="filter" data-filter=".community">Category 1</button>
-                        <button id="testing" class="filter" data-filter=".testing">Category 2</button> 
+                        <button id="testing" class="filter" data-filter=".testing">Category 2</button>
                         <button id="team" class="filter" data-filter=".team">Category 2</button>
                         <button id="coding" class="filter" data-filter=".coding">Category 2</button>
                         <button id="acedemic" class="filter" data-filter=".acedemic">Category 2</button>
-                        <button id="pm" class="filter" data-filter=".pm">Category 2</button> 
-                        <button id="innovation" class="filter" data-filter=".innovation">Category 2</button> 
-                        
-                        <button id="work" class="filter" data-filter=".work">Category 2</button> 
-                        <button id="score" class="filter" data-filter=".score">Category 2</button> 
-                        <button id="edu" class="filter" data-filter=".edu">Category 2</button> 
-                        
-                        
+                        <button id="pm" class="filter" data-filter=".pm">Category 2</button>
+                        <button id="innovation" class="filter" data-filter=".innovation">Category 2</button>
+
+                        <button id="work" class="filter" data-filter=".work">Category 2</button>
+                        <button id="score" class="filter" data-filter=".score">Category 2</button>
+                        <button id="edu" class="filter" data-filter=".edu">Category 2</button>
+
+
                         <button id="random" class="sort" data-sort="random">Asc</button>
                         <button id="default" class="sort" data-sort="default">default</button>
                         <button id="asc" class="sort" data-sort="order:asc">Asc</button>
                         <button id="desc" class="sort" data-sort="order:desc">Desc</button>
                     </div>
- 
+
                     <div class="row">
                         <!-- start resume1 -->
                         <div class="mix score col-sm-4" data-order="5">
                             <div class="Filtered-resume-item">
-                                <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-1_400x400.png'%}" alt=""></a>
+                                <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-1.png'%}" alt=""></a>
                                 <p class="Filtered-resume-item-name">Liang Huang</p>
                                 <div class="Filtered-resume-item-question">
-                                    <span class="pull-left">Fulfill your demand</span>
+                                    <span class="pull-left">Fulfill your demand ?</span>
                                     <span class="pull-right">
                                         <label><input type="checkbox">Yes</label>
                                         <label><input type="checkbox">No</label>
                                     </span>
+                                </div>
+                                <div class="Filtered-resume-item-statics-charts">
+                                    <div class="ProgressBar-1">
+                                        <label class="pull-left ProgressBar-label">Working Exp.</label>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="40"
+                                                 aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                                40%
+                                            </div>
+                                        </div>
+                                    </div>
 
-                            </div>
-                            <div class="Filtered-resume-item-statics-charts">
-                                <div class="ProgressBar-1">
-                                    <label class="pull-left ProgressBar-label">Working Exp.</label>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-                                             aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            40%
+                                    <div class="ProgressBar-2">
+                                        <label class="pull-left ProgressBar-label">Education</label>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="20"
+                                                 aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                               20%
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="ProgressBar-3">
+                                        <label class="pull-left ProgressBar-label">Test Score</label>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="60"
+                                                 aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                                70%
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="ProgressBar-2">
-                                    <label class="pull-left ProgressBar-label">Education</label>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
-                                             aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                           20%
-                                        </div>
-                                 </div>
+                                 <div class="Filtered-resume-item-description Filtered-bounceIn">
+                                     teamwork
                                 </div>
-
-                                <div class="ProgressBar-3">
-                                    <label class="pull-left ProgressBar-label">Test Score</label>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
-                                             aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            70%
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
-                    </div> 
                     <!-- end resume1 -->
                     <!-- start resume2 -->
                     <div class="mix team col-sm-4" data-order="1">
                          <div class="Filtered-resume-item">
-                                <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-1_400x400.png'%}" alt=""></a>
-                                <p class="Filtered-resume-item-name">Liang Huang</p>
+                                <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-2.jpg'%}" alt=""></a>
+                                <p class="Filtered-resume-item-name">Catherine Moore</p>
                                 <div class="Filtered-resume-item-question">
-                                    <span class="pull-left">Fulfill your demand</span>
+                                    <span class="pull-left">Fulfill your demand ?</span>
                                     <span class="pull-right">
                                         <label><input type="checkbox">Yes</label>
                                         <label><input type="checkbox">No</label>
                                     </span>
-
                             </div>
                             <div class="Filtered-resume-item-statics-charts">
                                 <div class="ProgressBar-1">
                                     <label class="pull-left ProgressBar-label">Working Exp.</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                        <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="40"
                                              aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                             80%
                                         </div>
@@ -202,7 +223,7 @@
                                 <div class="ProgressBar-2">
                                     <label class="pull-left ProgressBar-label">Education</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
+                                        <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="20"
                                              aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                                            20%
                                         </div>
@@ -212,23 +233,25 @@
                                 <div class="ProgressBar-3">
                                     <label class="pull-left ProgressBar-label">Test Score</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                                        <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="60"
                                              aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                             40%
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
+                               <div class="Filtered-resume-item-description Filtered-bounceOut">
+                                    This software engineer's overall score is xx. The codeme recommendation index is 0.1
+                                </div>
                         </div>
                     </div>
                     <!-- start resume3-->
                     <div class="mix coding col-sm-4" data-order="3">
                          <div class="Filtered-resume-item">
-                                <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-1_400x400.png'%}" alt=""></a>
-                                <p class="Filtered-resume-item-name">Liang Huang</p>
+                                <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-3.jpg'%}" alt=""></a>
+                                <p class="Filtered-resume-item-name">Ashley Forklord</p>
                                 <div class="Filtered-resume-item-question">
-                                    <span class="pull-left">Fulfill your demand</span>
+                                    <span class="pull-left">Fulfill your demand ?</span>
                                     <span class="pull-right">
                                         <label><input type="checkbox">Yes</label>
                                         <label><input type="checkbox">No</label>
@@ -239,7 +262,7 @@
                                 <div class="ProgressBar-1">
                                     <label class="pull-left ProgressBar-label">Working Exp.</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                        <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="40"
                                              aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                             40%
                                         </div>
@@ -249,7 +272,7 @@
                                 <div class="ProgressBar-2">
                                     <label class="pull-left ProgressBar-label">Education</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
+                                        <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="20"
                                              aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                                            20%
                                         </div>
@@ -259,25 +282,26 @@
                                 <div class="ProgressBar-3">
                                     <label class="pull-left ProgressBar-label">Test Score</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                                        <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="60"
                                              aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                             60%
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
+                               <div class="Filtered-resume-item-description">
+                                    This software engineer has extradinary ability in team work and coding. However, his ability of project management need some improvements. So his overall score is xx. The codeme recommendation index is 0.3.
+                                </div>
                         </div>
-
                     </div>
                     <!--<div class="row">-->
                         <!-- start resume4 -->
                         <div class="mix team col-sm-4" data-order="7">
                             <div class="mix community Filtered-resume-item">
-                                <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-1_400x400.png'%}" alt=""></a>
-                                <p class="Filtered-resume-item-name">Liang Huang</p>
+                                <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-4.jpg'%}" alt=""></a>
+                                <p class="Filtered-resume-item-name">Ben Johonson</p>
                                 <div class="Filtered-resume-item-question">
-                                    <span class="pull-left">Fulfill your demand</span>
+                                    <span class="pull-left">Fulfill your demand ?</span>
                                     <span class="pull-right">
                                         <label><input type="checkbox">Yes</label>
                                         <label><input type="checkbox">No</label>
@@ -288,7 +312,7 @@
                                 <div class="ProgressBar-1">
                                     <label class="pull-left ProgressBar-label">Working Exp.</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                        <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="40"
                                              aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                             40%
                                         </div>
@@ -298,7 +322,7 @@
                                 <div class="ProgressBar-2">
                                     <label class="pull-left ProgressBar-label">Education</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
+                                        <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="20"
                                              aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                                            20%
                                         </div>
@@ -308,23 +332,25 @@
                                 <div class="ProgressBar-3">
                                     <label class="pull-left ProgressBar-label">Test Score</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                                        <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="60"
                                              aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                             60%
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
+                                 <div class="Filtered-resume-item-description">
+                                    This software engineer has extradinary ability in team work and coding. However, his ability of project management need some improvements. So his overall score is xx. The codeme recommendation index is 0.3.
+                                </div>
                         </div>
-                    </div> 
+                    </div>
                     <!-- end resume5 -->
                     <div class="team coding work col-sm-4" data-order="2">
                          <div class="mix score testing Filtered-resume-item">
-                                <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-1_400x400.png'%}" alt=""></a>
-                                <p class="Filtered-resume-item-name">Liang Huang</p>
+                                <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-5.jpg'%}" alt=""></a>
+                                <p class="Filtered-resume-item-name">Emily Kosh</p>
                                 <div class="Filtered-resume-item-question">
-                                    <span class="pull-left">Fulfill your demand</span>
+                                    <span class="pull-left">Fulfill your demand ?</span>
                                     <span class="pull-right">
                                         <label><input type="checkbox">Yes</label>
                                         <label><input type="checkbox">No</label>
@@ -335,7 +361,7 @@
                                 <div class="ProgressBar-1">
                                     <label class="pull-left ProgressBar-label">Working Exp.</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                        <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="40"
                                              aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                             40%
                                         </div>
@@ -345,7 +371,7 @@
                                 <div class="ProgressBar-2">
                                     <label class="pull-left ProgressBar-label">Education</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
+                                        <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="20"
                                              aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                                            20%
                                         </div>
@@ -355,23 +381,25 @@
                                 <div class="ProgressBar-3">
                                     <label class="pull-left ProgressBar-label">Test Score</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                                        <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="60"
                                              aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                             60%
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
+                               <div class="Filtered-resume-item-description">
+                                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit ametibero
+                                    molestiae odit quia sapiente voluptas! Fugit, optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam architecto atque aut, earum expedita, illo laborum laudantium
+                               </div>
                         </div>
-
                     </div>
                     <div class="mix team score col-sm-4" data-order="6">
                          <div class="Filtered-resume-item">
-                                <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-1_400x400.png'%}" alt=""></a>
-                                <p class="Filtered-resume-item-name">Liang Huang</p>
+                                <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-6.jpg'%}" alt=""></a>
+                                <p class="Filtered-resume-item-name">Irene Sebastian</p>
                                 <div class="Filtered-resume-item-question">
-                                    <span class="pull-left">Fulfill your demand</span>
+                                    <span class="pull-left">Fulfill your demand ?</span>
                                     <span class="pull-right">
                                         <label><input type="checkbox">Yes</label>
                                         <label><input type="checkbox">No</label>
@@ -382,7 +410,7 @@
                                 <div class="ProgressBar-1">
                                     <label class="pull-left ProgressBar-label">Working Exp.</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                        <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="40"
                                              aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                             40%
                                         </div>
@@ -392,7 +420,7 @@
                                 <div class="ProgressBar-2">
                                     <label class="pull-left ProgressBar-label">Education</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
+                                        <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="20"
                                              aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                                            20%
                                         </div>
@@ -402,14 +430,16 @@
                                 <div class="ProgressBar-3">
                                     <label class="pull-left ProgressBar-label">Test Score</label>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                                        <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="60"
                                              aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                             60%
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
+                               <div class="Filtered-resume-item-description">
+                                  This software engineer's overall score is xx. The codeme recommendation index is 0.3. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cum deleniti, dicta dol.
+                                </div>
                         </div>
                     </div>
 
@@ -418,7 +448,7 @@
         </div>
     </div>
 
-    {% endblock %} 
+    {% endblock %}
 
      <script>
                 function createChart() {
@@ -456,7 +486,7 @@
                           }
                       });
                   }
-                
+
                 $(document).ready(createChart);
                 $(document).bind("kendo:skinChange", createChart);
                 function sliderOnChange1(e) {
@@ -573,7 +603,7 @@
                 function sliderOnSlide(e) {
                     console.log("Slide :: new slide value is: " + e.value);
                 }
-                
+
 
                 $(document).ready(function() {
                     $('#Container').mixItUp();
@@ -683,6 +713,5 @@
 
                 });
             </script>
-
 </body>
 

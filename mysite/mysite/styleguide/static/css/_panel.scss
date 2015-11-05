@@ -43,7 +43,7 @@
 }
 
 .Filtered-resume {
-  background-color: #F4F4F4;
+  background-color: #ededed;
   height: 999999px;
   padding-left: 30px;
   padding-right: 0;
@@ -52,18 +52,21 @@
 }
 
 .Filtered-resume-item {
-  background-color: #fff;
-  height: 363px;
+  background-color: #f7fafc;
+  min-height: 363px;
   width: 100%;
   text-align: center;
   border: 1px solid #E7E7E7;
   border-radius: 4px;
+  margin-bottom: 24px;
 }
 
 .Filtered-resume-item-avatar {
   border-radius: 50%;
-  border: 5px solid #E6E6E6;
+  border: 5px solid #cccccc;
   margin-top: 16px;
+  height: 134px;
+  width: 134px;
 }
 
 .Filtered-resume-item-name {
@@ -128,4 +131,141 @@
   color: #8795A0;
   text-align: right;
   padding-right: 5px;
+}
+
+.progress {
+  border-radius: 0;
+}
+
+.progress-bar-color {
+  //background-color: #5481FF;
+  background-color: #F0AD4E;
+}
+
+.balSlider-group {
+  div {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+  }
+}
+
+.balSlider-label {
+  text-align: right;
+  padding-top: 4px;
+
+}
+
+#fieldlist {
+  label {
+    display: inline-block; // for balslider-label
+    padding-right: 8px;
+    font-weight: normal;
+    font-size: 11px;
+    color: #cccccc;
+  }
+  > li {
+    padding-bottom: 0;
+  }
+}
+
+.Filter-radar-charts-group,
+.Filter-ability-group {
+  list-style-type: none;
+}
+
+
+.Filtered-resume-item-description {
+  padding: 10px 10px 12px 10px;
+  background-color: #47535D;
+  //width: 95%;
+  text-align: left;
+  margin: 0 auto;
+  //border-top: 1px dashed #e6e6e6;
+  color: #fff;
+  min-height: 120px;
+}
+
+.Filters-divider {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 60%;
+  border-top: 0;
+}
+
+
+.k-slider-selection  {
+  background-color: #F0AD4E !important;
+  //background-color: #FFBE31 !important;
+}
+
+.Filtered-bounceOut {
+  animation-name: bounceOut;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-delay: .5s;
+}
+
+.Filtered-bounceIn {
+  animation-name: bounceIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: .5s;
+}
+
+
+
+@keyframes bounceIn {
+
+  0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  //20% {
+  //  transform: scale3d(1.1, 1.1, 1.1);
+  //}
+  //
+  //40% {
+  //  transform: scale3d(.9, .9, .9);
+  //}
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  //80% {
+  //  transform: scale3d(.97, .97, .97);
+  //}
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.bounceIn {
+  animation-name: bounceIn;
+}
+
+
+
+@keyframes bounceOut {
+
+  55% {
+    opacity: 1;
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+}
+
+.bounceOut {
+  animation-name: bounceOut;
 }
