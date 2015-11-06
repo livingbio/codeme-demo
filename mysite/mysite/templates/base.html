@@ -28,51 +28,6 @@
     <script src="{% static 'js/html5shiv.min.js' %}"></script>
     <script src="{% static 'js/respond.min.js' %}"></script>
     <![endif]-->
-    <script type="text/plain" id="resume">
-        <div class="mix score col-sm-4" data-order="5">
-            <div class="Filtered-resume-item">
-                <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-1_400x400.png' %}" alt=""></a>
-                <p class="Filtered-resume-item-name">Liang Huang</p>
-                <div class="Filtered-resume-item-question">
-                    <span class="pull-left">Fulfill your demand ?</span>
-                    <span class="pull-right">
-                        <label><input type="checkbox">Yes</label>
-                        <label><input type="checkbox">No</label>
-                    </span>
-
-                </div>
-                <div class="Filtered-resume-item-statics-charts">
-                    <div class="ProgressBar-1">
-                        <label class="pull-left ProgressBar-label">Working Exp.</label>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                40%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ProgressBar-2">
-                        <label class="pull-left ProgressBar-label">Education</label>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                20%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ProgressBar-3">
-                        <label class="pull-left ProgressBar-label">Test Score</label>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                70%
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="Filtered-resume-item-description Filtered-bounceIn">
-                    teamwork
-                </div>
-            </div>
-        </div>
-    </script>
 </head>
 <body>
     {% block body %}
@@ -91,8 +46,8 @@
                     </div>
                 </div>
                 <div class="Status-analytics-filters">
-                 <header class="Status-analytics-filter-heading">Filters</header>
-                 <div class="Status-analytics-filter-filters">
+                   <header class="Status-analytics-filter-heading">Filters</header>
+                   <div class="Status-analytics-filter-filters">
                     <ul id="fieldlist">
                         <li class="balSlider-group clearfix">
                             <label class="balSlider-label col-sm-3">Team Work</label>
@@ -182,7 +137,51 @@
             </div>
 
             <div class="row">
+                {% for resume in resumes %}
+                <div class="mix score col-sm-4" data-order="5">
+                    <div class="Filtered-resume-item">
+                        <a href="#"><img class="Filtered-resume-item-avatar" src="{% static 'img/avatar-1_400x400.png' %}" alt=""></a>
+                        <p class="Filtered-resume-item-name">{{resume.name}}</p>
+                        <div class="Filtered-resume-item-question">
+                            <span class="pull-left">Fulfill your demand ?</span>
+                            <span class="pull-right">
+                                <label><input type="checkbox">Yes</label>
+                                <label><input type="checkbox">No</label>
+                            </span>
 
+                        </div>
+                        <div class="Filtered-resume-item-statics-charts">
+                            <div class="ProgressBar-1">
+                                <label class="pull-left ProgressBar-label">Working Exp.</label>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="{{resume.working_exp}}" aria-valuemin="0" aria-valuemax="100" style="width: {{resume.working_exp}}%">
+                                        {{resume.working_exp}}%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ProgressBar-2">
+                                <label class="pull-left ProgressBar-label">Education</label>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="{{resume.education}}" aria-valuemin="0" aria-valuemax="100" style="width: {{resume.education}}%">
+                                        {{resume.education}}%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ProgressBar-3">
+                                <label class="pull-left ProgressBar-label">Test Score</label>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-color" role="progressbar" aria-valuenow="{{resume.test_score}}" aria-valuemin="0" aria-valuemax="100" style="width: {{resume.test_score}}%">
+                                        {{resume.test_score}}%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Filtered-resume-item-description Filtered-bounceIn">
+                            {{resume.high_light}}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </section>
     </div>
